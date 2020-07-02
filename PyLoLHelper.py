@@ -1,3 +1,4 @@
+
 import json
 import urllib.request
 
@@ -13,7 +14,7 @@ def get_champ(champion_id, version):
             if champ["key"] == str(champion_id):
                 return champ["id"]
 
-
+"""
 def get_tips_against(champion):
     with urllib.request.urlopen(
             "http://ddragon.leagueoflegends.com/cdn/" + version + "/data/en_US/champion/" + champion + ".json") as url:
@@ -22,9 +23,9 @@ def get_tips_against(champion):
         print("Tips when playing against " + champion)
         for count, tips in enumerate(data["data"][champion]["enemytips"]):
             print(str(count + 1) + ". " + tips)
+"""
 
-
-api_key = "RGAPI-0ddfe419-162d-490e-847e-c44cbf8049bf"
+api_key = "RGAPI-2781b50d-7a9a-4350-a38e-3bf19f6b61e1"
 
 summoner = input("Your summoner name: ")
 
@@ -39,5 +40,5 @@ with urllib.request.urlopen(
             print("\nTeam 1:")
         elif count == 5:
             print("\nTeam 2:")
-        print(player["summonerName"] + " (" + get_champ(player["championId"], version) + ")")
-        get_tips_against(get_champ(player["championId"], version))
+        print(player["summonerName"] + " (" + get_champ(player["championId"], version) + ")" + " Lvl:" )
+       ## get_tips_against(get_champ(player["championId"], version))
